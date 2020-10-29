@@ -1,0 +1,31 @@
+Report.txt
+
+basic User Based Colaborative Filtering
+using Cosine Similarity:    0.794409784928583
+using Pearson Similarity:   0.852117878837629
+
+extended User Based Collaborative Filtering
+using Inverse User Frequency:   0.939706123789197
+using Case Modification:        0.988630766704975
+
+Item Based Collaborative Filtering 
+0.840050894762765
+
+
+Above you can find the results for all of my testing. Surprisingly, basic user 
+based collaborative filtering did the best of all the different recommendation
+systems. I was not expecting this to be the case, as I figured modifying each 
+algorithm slightly was meant to improve it. It is very possible that I have done
+something incorrectlly in my implementation, but reaching an overall MAE of
+0.794409784928583 for basic UBCF seemed respectably good already. I think I 
+definately could have done better on the extended UBCF if I spent more time 
+trying to understand more what was happening and tweaking some of the variables.
+
+For my custom algorithm I tried to stick to something very similar to cosine UBCF as that 
+was my best performing algorithm. In the end after a few very terribly failed instances, 
+I stuff with a fairly simple modification, which was to use the the final rating given by
+similarities, and then add in some weighting of the overall average score of the movie in 
+general regardless of user similarity. In my final version I used a 10% weighting for overall 
+average and 90% for traditional UBCF score. My reasoning here, is that I thouhgt this might add 
+some helpful variability into the mix from a whole group of people outside just those that 
+are similar to the active user. In the end this did not work too well as my MAE was 0.840050894762765
